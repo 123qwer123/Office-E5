@@ -5,7 +5,15 @@ name: Office E5
 
 on:
   schedule:
-    - cron: '0 0 */6 15 1,3,5,7,9,11 ?'
+    - cron: '0 9 15 1,3,5,7,9,11 *'
+  workflow_dispatch:
+    inputs:
+      unconditional-invoking:
+        description: 'Invoke API unconditionally'
+        type: boolean
+        required: true
+        default: true
+
   release:
     types: [published]
   watch:
